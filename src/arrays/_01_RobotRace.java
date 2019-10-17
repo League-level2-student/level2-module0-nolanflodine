@@ -28,7 +28,7 @@ robot[4].setY(500);
 robot[4].setX(500);
 	//5. use another for loop to iterate through the array and make each robot move 
 	//   a random amount less than 50.
-
+for (int j = 0; j < 99; j++) {		
 for (int i = 0; i < robot.length; i++) {
 	if (robot[i].getY()>=0) {
 	robot[i].setSpeed(10);
@@ -37,9 +37,11 @@ for (int i = 0; i < robot.length; i++) {
 	robot[i].move(rand);
 	}
 	else {
-		robot[i].setSpeed(10);
+		j=99;
 		robot[i].turn(1440);
+		break;
 	}
+}
 }
 }
 
@@ -51,4 +53,4 @@ for (int i = 0; i < robot.length; i++) {
 
 	//9. make the robots race around a circular track.
 }
-}
+
