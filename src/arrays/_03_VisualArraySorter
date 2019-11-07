@@ -1,7 +1,7 @@
 /* Paste the code into a new Processing sketch and complete the steps. */
 
 //1. create an array of ints. don't initialize it yet.
-int [] array;
+int [] arr;
 void setup() {
   //2. set the size of your window
   size(500,500);
@@ -10,25 +10,25 @@ void setup() {
   //  because the developers don't know how programming is supposed to work.
 
   //3. initialize your array with the built in width variable
-  int [] array= new int [width];
+  arr= new int [width];
   //4. initialize the ints in the array with random numbers
   //   from 0 to the built in height variable
-int rand = (int) random(0,height);
   
 }
   void draw(){
-
-  int array = new rand();
-  
+int i=0;
   //5. call the noStroke() method
    noStroke();
 
 
   //6. set the background color with background(r, g, b);
-
+background(20,255,20);
   //7. set the color for your graph
-
+fill(255,255,255);
   //8. draw a rectangle for each int in your array.
+  for (i=0;i<arr.length;i++){
+  rect(i,height,1,-i);
+  }
   //   the x value will be the current index in the array
   //   the y value will the height variable
   //   the width is 1 (one)
@@ -36,11 +36,13 @@ int rand = (int) random(0,height);
 
 
   //9. call the stepSort method
-
+stepSort(arr);
   //10. extract the code that randomizes the array into a method.
 
   //11. call the method you made in step 10 when the mouse is pressed
-
+if (mousePressed){
+  rand();
+}
 }
 
 void stepSort(int[] arr) {
@@ -51,4 +53,11 @@ void stepSort(int[] arr) {
       arr[i - 1] = t;
     }
   }
+}
+void rand(){
+int i;
+for ( i=0;i<arr.length;i++){
+  arr[i] = (int) random(0,height);
+;
+}
 }
